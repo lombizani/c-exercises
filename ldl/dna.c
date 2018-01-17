@@ -1,9 +1,9 @@
 /***************************************************************/
 /**                                                           **/
-/** Carlos Filipe Lombizani                                   **/
-/** Exercício-Programa 1 - Reversões em DNA                   **/
-/** Professor: Eloi                                           **/
-/** Turma: Matutino                                           **/
+/** Carlos De Bernardis                                       **/
+/** Este programa utiliza listas duplamente ligadas para      **/
+/** realizar operações em cadeias de bases nucleotídicas      **/
+/** lidas da entrada padrão.                                  **/
 /**                                                           **/
 /***************************************************************/
 #include <stdlib.h>

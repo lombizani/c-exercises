@@ -1,9 +1,8 @@
 /**********************************************************
- * Aluno: Carlos Filipe Lombizani De Bernardis            *
- * Numero USP: 6430536                                    *
- * Exercicio-Programa 3 -- Ordenacao de Arquivos de texto *
- * MAC0122 -- BMAC -- 2008 -- Prof.: Francisco Reverbel   *
- * Compilador: gcc 4.2          Arquivo: sort.c           *
+ * Carlos De Bernardis                                    *
+ * Uma implementação simples do utilitário sort que       *
+ * permite que se escolha qual algoritmo de ordenação se  *
+ * deseja utilizar para ordenar o texto                   *
  **********************************************************/
 
 #include <stdio.h>
@@ -11,7 +10,6 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
-#include "mallocX.h"
 #define MAX_LENGTH 40000000     /* tamanho maximo da entrada             */
 #define MAX_LINES 10            /* numero inicial de linhas              */
 #define FACTOR 2                /* coeficiente de crescimento das linhas */
@@ -83,7 +81,7 @@ void merge(int p, int q, int r, char **strs, cmpfunc cmp)
         int i, j, k;
         char **w;
         
-        w = mallocX((r - p) * sizeof(char *));
+        w = malloc((r - p) * sizeof(char *));
         i = p;
         j = q;
         k = 0;
@@ -265,14 +263,14 @@ int main(int argc, char *argv[])
         }
         
         /* alocamos um numero de linhas inicial e conforme precisamos alocamos mais */
-        lines = mallocX(maxlines * sizeof(char *));
+        lines = malloc(maxlines * sizeof(char *));
         
         /* agora vamos processar a entrada */
         if (input == stdin) {
                 int c;
                 
                 size = 0;
-                text = mallocX(MAX_LENGTH * sizeof(char));
+                text = malloc(MAX_LENGTH * sizeof(char));
                 lines[j++] = text;
                 
                 while ((c = fgetc(input)) != EOF) {
@@ -288,7 +286,7 @@ int main(int argc, char *argv[])
                 text[size++] = '\0';
         } else {
                 size = fsize(input) + 1;
-                text = mallocX(size);
+                text = malloc(size);
                 fread(text, sizeof(char), size, input);
                 text[size - 1] = '\0';
                 lines[j++] = text;
@@ -342,6 +340,5 @@ int main(int argc, char *argv[])
         if (timing)
                 fprintf(stderr, "\nTempo decorrido:\t%g s\n", difftime(finish,start));
         
-        /* adeus e obrigado por todos os peixes! */
         return 0;
 }

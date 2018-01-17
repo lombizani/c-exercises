@@ -1,16 +1,7 @@
-/**********************************************************
- * Aluno: Carlos Filipe Lombizani De Bernardis            *
- * Numero USP: 6430536                                    *
- * Exercicio-Programa 2 -- Polinomios Esparsos: O Retorno *
- * MAC0122 -- BMAC -- 2008 -- Prof.: Francisco Reverbel   *
- * Compilador: gcc 4.2          Arquivo: pilha.c          *
- **********************************************************/
-
-/*** Implementacao da biblioteca pilha ***/
+/*** Implementacao de uma pilha ***/
 #include <stdlib.h>
 #include <stdio.h>
 #include "pilha.h"
-#include "mallocX.h"
 
 struct pilha {
         Item *buffer;
@@ -22,8 +13,8 @@ Pilha cria(int n)
 {
         Pilha p;
         
-        p = mallocX(sizeof(struct pilha));
-        p->buffer = mallocX(n * sizeof(Item));
+        p = malloc(sizeof(struct pilha));
+        p->buffer = malloc(n * sizeof(Item));
         p->capacidade = n;
         p->topo = 0;
         

@@ -1,9 +1,8 @@
 /***************************************************************/
 /**                                                           **/
-/** Carlos Filipe Lombizani                                   **/
-/** Exercício-Programa 2 - Busca de palavras                  **/
-/** Professor: Eloi                                           **/
-/** Turma: Matutino                                           **/
+/** Carlos De Bernardis                                       **/
+/** Este programa utiliza árvores binárias para contar a      **/
+/** quantidade de palavras que ocorrem n vezes num texto      **/
 /**                                                           **/
 /***************************************************************/
 #include <stdlib.h>

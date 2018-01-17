@@ -1,16 +1,13 @@
 /**********************************************************
- * Aluno: Carlos Filipe Lombizani De Bernardis            *
- * Numero USP: 6430536                                    *
- * Exercicio-Programa 2 -- Polinomios Esparsos: O Retorno *
- * MAC0122 -- BMAC -- 2008 -- Prof.: Francisco Reverbel   *
- * Compilador: gcc 4.2          Arquivo: cliente.c        *
+  Carlos De Bernardis
+  Este programa efetua operações em polinômios recebidos
+  da entrada padrão ou de um arquivo 
  **********************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "pilha.h"
-#include "mallocX.h"
 #define MAX_LINHA 4096  /* comprimento maximo de uma linha da entrada */
 #define FALSE 0
 #define TRUE 1
@@ -102,7 +99,7 @@ Polinomio avalia(char posfixa[], Polinomio polinomio[])
         
         tamanho = strlen(posfixa);
         pilha = cria(tamanho);
-        lixo = mallocX(tamanho * sizeof(Polinomio));
+        lixo = malloc(tamanho * sizeof(Polinomio));
         
         for (i = 0; posfixa[i] != '\0' && posfixa[i] != '\n'; i++) {
                 if (posfixa[i] >= 'a' && posfixa[i] <= 'z')
@@ -180,8 +177,8 @@ Polinomio ler_polinomio(char *linha)
         
         ntermos = (int)strtol(linha, &sobra, 10);
         
-        exps = mallocX(ntermos * sizeof(unsigned int));
-        coefs = mallocX(ntermos * sizeof(double));
+        exps = malloc(ntermos * sizeof(unsigned int));
+        coefs = malloc(ntermos * sizeof(double));
         
         /* aqui nos pegamos os parametros da linha ate ela acabar */
         do {
@@ -228,7 +225,7 @@ int main(int argc, char *argv[])
                 n = atoi(linha);
                 
         /* vamos inicializar nosso vetor e depois ler os n polinomios */
-        polinomio = callocX(26, sizeof(Polinomio));
+        polinomio = calloc(26, sizeof(Polinomio));
 	
         while (i < n) {
                 if (fgets(linha, MAX_LINHA, entrada) != NULL) {

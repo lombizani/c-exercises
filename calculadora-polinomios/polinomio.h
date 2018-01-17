@@ -1,11 +1,3 @@
-/**********************************************************
- * Aluno: Carlos Filipe Lombizani De Bernardis            *
- * Numero USP: 6430536                                    *
- * Exercicio-Programa 2 -- Polinomios Esparsos: O Retorno *
- * MAC0122 -- BMAC -- 2008 -- Prof.: Francisco Reverbel   *
- * Compilador: gcc 4.2          Arquivo: polinomio.h      *
- **********************************************************/
-
 /*** Definicao da interface da biblioteca polinomio ***/
 
 /* Este e o nosso tipo de dados abstrato */
